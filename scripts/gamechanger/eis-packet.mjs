@@ -3,6 +3,7 @@
 //
 //   node scripts/gamechanger/import.mjs        (refreshes out/eis-stats-*.json)
 //   node scripts/gamechanger/eis-packet.mjs
+//   node scripts/gamechanger/eis-packet.mjs --only cara-orlando   (one girl's standalone sheet)
 //
 // Nominees = players.json athletes in CLASS not already on the EIS nomination
 // tracker (myeis360.com/nomination-status). Screenshots come from GameChanger,
@@ -78,9 +79,20 @@ const fmtHeight = (inches) => (inches ? `${Math.floor(inches / 12)}'${inches % 1
 const joe = team.coaches.find((c) => c.name === 'Joe Walker');
 const teamX = (team.socialLinks?.twitter || '').replace(/^https?:\/\/(x|twitter)\.com\//, '@');
 
+const onlyArg = process.argv.indexOf('--only');
+const only = onlyArg > -1 ? process.argv[onlyArg + 1] : null;
+
 const nominees = players
   .filter((p) => p.gradYear === CLASS && !ALREADY_NOMINATED.has(p.id))
+  .filter((p) => !only || slug(p) === only)
   .sort((a, b) => a.lastName.localeCompare(b.lastName));
+if (only && !nominees.length) throw new Error(`--only ${only}: no ${CLASS} nominee with that slug`);
+
+const single = only ? nominees[0] : null;
+const singleName = single ? `${single.firstName} ${single.lastName}` : null;
+const nomineeCount = single ? 'this nomination' : `all ${nominees.length} nominations`;
+const outPdf = single ? join(OUT_DIR, `EIS Class of ${CLASS} - ${singleName} - for Joe.pdf`) : PDF;
+const outHtml = single ? join(OUT_DIR, `${only}.html`) : HTML;
 
 function statTable(title, rows, seasons) {
   const head = seasons.map((s) => `<th>${esc(s.label)}</th>`).join('');
@@ -247,27 +259,27 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 </style></head><body>
 
 <section>
-  <h1>EIS Class of 2028 Rankings — Nominations</h1>
+  <h1>EIS Class of ${CLASS} Rankings — ${single ? `Nomination: ${esc(singleName)}` : 'Nominations'}</h1>
   <div class="lead">${esc(team.name)} · Prepared ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} for Coach Joe Walker's approval</div>
-  <p><b>Deadline:</b> ${esc(DEADLINE)}. Nominations missing any required field are rejected, and EIS now requires GameChanger screenshots as stat verification (included after each player).</p>
+  <p><b>Deadline:</b> ${esc(DEADLINE)}. Nominations missing any required field are rejected, and EIS now requires GameChanger screenshots as stat verification (included after ${single ? 'her stats' : 'each player'}).</p>
 
-  <h3>Status on the EIS nomination tracker</h3>
+  ${single ? '' : `<h3>Status on the EIS nomination tracker</h3>
   <table class="summary">
     <tr><th>Player</th><th>Position</th><th>Status</th></tr>
     ${players.filter((p) => p.gradYear === CLASS).sort((a, b) => a.lastName.localeCompare(b.lastName)).map((p) => `<tr><td>${esc(p.firstName)} ${esc(p.lastName)}</td><td>${esc(p.position)}</td><td>${ALREADY_NOMINATED.has(p.id) ? 'Already nominated — no action' : '<b>Needs nomination — in this packet</b>'}</td></tr>`).join('')}
-  </table>
+  </table>`}
 
   <h3>How to approve</h3>
   <ol>
-    <li>Check each player's stats and info. Green cells are what gets submitted.</li>
-    <li>Fill in every <span class="need">NEED</span> item: each girl's parent contact, tournament names, and the per-player gaps.</li>
-    <li>Reply "approved" with the fill-ins. We'll enter all six on myeis360.com/nominate and stop at the final screen for a last look before Submit.</li>
+    <li>Check ${single ? 'her' : "each player's"} stats and info. Green cells are what gets submitted.</li>
+    <li>Fill in every <span class="need">NEED</span> item${single ? '' : ": each girl's parent contact, tournament names, and the per-player gaps"}.</li>
+    <li>Reply "approved" with the fill-ins. We'll enter ${single ? 'it' : `all ${nominees.length}`} on myeis360.com/nominate and stop at the final screen for a last look before Submit.</li>
   </ol>
 </section>
 
 <section>
   <h1>Team &amp; Contacts</h1>
-  <p class="note">Entered once on the EIS form; applies to all six nominations.</p>
+  <p class="note">Entered once on the EIS form; applies to ${nomineeCount}.</p>
   <h3>Team</h3>
   <table class="kv">
     <tr><td>Club team name (as on leaderboard)</td><td>${esc(team.name)} <span class="note">(matches the two existing nominations)</span></td></tr>
@@ -303,8 +315,8 @@ ${teamShots.map((f) => `
 </section>`).join('')}
 
 <section>
-  <h1>Action Photos</h1>
-  <p class="note">One per athlete for the EIS form. Pulled from each girl's X posts and videos — swap any you don't like.</p>
+  <h1>Action Photo${single ? '' : 's'}</h1>
+  <p class="note">${single ? 'For the EIS form. Pulled from her X posts and videos — swap it if you don\'t like it.' : "One per athlete for the EIS form. Pulled from each girl's X posts and videos — swap any you don't like."}</p>
   <div class="action-grid">
     ${nominees.map((p) => {
       const f = actionPhotos.find((a) => a.startsWith(slug(p) + '-'));
@@ -315,11 +327,11 @@ ${teamShots.map((f) => `
 </body></html>`;
 
 mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(HTML, html);
+writeFileSync(outHtml, html);
 const browser = await chromium.launch({ channel: 'chrome' });
 const page = await browser.newPage();
-await page.goto(pathToFileURL(HTML).href, { waitUntil: 'networkidle' });
-await page.pdf({ path: PDF, format: 'Letter', printBackground: true, margin: { top: '0.5in', bottom: '0.5in', left: '0.5in', right: '0.5in' } });
+await page.goto(pathToFileURL(outHtml).href, { waitUntil: 'networkidle' });
+await page.pdf({ path: outPdf, format: 'Letter', printBackground: true, margin: { top: '0.5in', bottom: '0.5in', left: '0.5in', right: '0.5in' } });
 await browser.close();
 console.log(`Nominees: ${nominees.map((p) => `${p.firstName} ${p.lastName}`).join(', ')}`);
-console.log(`PDF: ${PDF}`);
+console.log(`PDF: ${outPdf}`);

@@ -51,6 +51,7 @@ in `src/data/schedule.json` (`git show 8d5f4f5~1:src/data/schedule.json`).
    `<first>-<last>-action.jpg` in `eis-<class>/action-photos/`.
 5. **Build the packet** — `node scripts/gamechanger/eis-packet.mjs`. Yellow
    `NEED` boxes are the coach's fill-ins. Send the PDF to Joe for approval.
+   `--only <first-last>` writes one girl's standalone sheet alongside it.
 6. **Submit** on myeis360.com/nominate (5-step form, coach = nominator, one
    submission per girl), stopping on the final screen for a human to click Submit.
 
