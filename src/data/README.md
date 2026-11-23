@@ -230,7 +230,7 @@ Player data originates from the Program Match database (`player_profiles` table)
 To sync latest data from database:
 ```bash
 cd /path/to/program-match
-npm run scripts/export-stars-roster.ts > /path/to/starsnatwalker.com/src/data/players.json
+npm run scripts/export-stars-roster.ts > /path/to/topgunwalker.com/src/data/players.json
 ```
 
 ---

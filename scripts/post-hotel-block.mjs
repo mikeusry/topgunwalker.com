@@ -82,4 +82,4 @@ if (existing) {
 }
 writeFileSync(noticesPath, `${JSON.stringify(notices, null, 2)}\n`);
 
-console.log(`Posted ${name} on ${id}. Deploy starsnatwalker.com when you want families to see it.`);
+console.log(`Posted ${name} on ${id}. Deploy topgunwalker.com when you want families to see it.`);

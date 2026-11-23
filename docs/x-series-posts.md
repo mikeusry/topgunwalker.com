@@ -32,7 +32,7 @@ VISAA Indoor Track State Champion — 4x200 anchor, school AND state meet record
 US Virgin Islands 18U National Team
 
 @Keirafrazier33
-https://starsnatwalker.com/players/keira-frazier/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/keira-frazier/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 *Why this hook:* plenty of 2028 middle infielders have a good exit velo. A state-record relay anchor with a 10.98 home-to-home is a specific, verifiable athlete — and speed is the tool a coach can't teach.
@@ -53,7 +53,7 @@ Austyn Kinch hit .543 over 28 games as a sophomore and led Wisconsin in hits wit
 2026 WIAA State Champions · #100 National Catcher (Extra Inning Softball)
 
 @AustynKinch2028
-https://starsnatwalker.com/players/austyn-kinch/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/austyn-kinch/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 *Why this hook:* 1.76 stops a catcher-hunting coach mid-scroll, and five strikeouts across a full season is the number that proves the .543 isn't luck.
@@ -75,7 +75,7 @@ Cara Orlando is a fast outfielder who covers a lot of ground — twitchy, with a
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @Caraorlando2028
-https://starsnatwalker.com/players/cara-orlando/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/cara-orlando/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 *Why this hook:* range plus twitch plus a big bat. The 74 is the number under the swing.
@@ -94,7 +94,7 @@ Sophia Perez hits leadoff and starts at short. Left side of the box. She can bun
 2026 Alliance Fastpitch Nationals All-Tournament Team
 
 @SophiaPerez_28
-https://starsnatwalker.com/players/sophia-perez/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/sophia-perez/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 *Why this hook:* leading an entire state in any category is the rarest thing on this roster. Three strikeouts in 115 PAs is the bat-control proof underneath it.
@@ -115,7 +115,7 @@ Kierra Wunderlich is a 2x USSSA All-American who can beat you from the circle or
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @kierrawunder
-https://starsnatwalker.com/players/kierra-wunderlich/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/kierra-wunderlich/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ⚠️ **Thinnest profile on the roster** — no measurables on file, two achievements, three-sentence bio. The clips carry this post entirely. **Worth asking her family for velo numbers and a season stat line before Aug 25.** With those, this becomes a much stronger post.
@@ -136,7 +136,7 @@ Maddie Diaz hit .455 over 134 plate appearances on the 2025 summer circuit.
 2026 TCIC Team Cuba 18U · 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @MaddieDiaz2028
-https://starsnatwalker.com/players/maddie-diaz/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/maddie-diaz/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 *Why this hook:* "undefeated season, state title, all-state as a sophomore" needs no embellishment. Slappers are a specific need — coaches looking for one will stop.
@@ -157,7 +157,7 @@ Lyla Seibert has the range and quick release to play anywhere on the infield.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @LylaSeibert17
-https://starsnatwalker.com/players/lyla-seibert/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/lyla-seibert/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ⚠️ **No measurables on file.** The 5.174 GPA is genuinely arresting — an academic-money school will stop on that alone — but this post needs a stat line. **Ask for velo and a season line before Sep 1.**
@@ -176,7 +176,7 @@ Sara Utrera is a Stars National Walker middle infielder — defense first, big-m
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @Sara_Utrera2028
-https://starsnatwalker.com/players/sara-utrera/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/sara-utrera/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ⚠️ **Thin — no measurables, no season stats.** Florida 6A is a real credential and carries the post, but **ask the family for a stat line and film before Sep 3.**
@@ -197,7 +197,7 @@ Avery Jones is a 6'0" power pitcher who hits in the middle of the Stars 16U orde
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @avery_jones28
-https://starsnatwalker.com/players/avery-jones/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/avery-jones/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ⚠️ **Weakest post in the series as written.** Height is the only differentiator on file — no velo, no stats, no film. **This one genuinely needs material before Sep 8.** Pitching velo alone would transform it.
@@ -217,7 +217,7 @@ Strong arm, quick release out of the crouch
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @C_Llaneza02
-https://starsnatwalker.com/players/charlotte-llaneza/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/charlotte-llaneza/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ⚠️ **Thin.** The catcher/3B versatility angle is real and worth leading on, but **needs a pop time and a stat line before Sep 10.**
@@ -241,7 +241,7 @@ No. 4 K/IP among Tier 1 pitchers — AFCS Nationals
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @EliseBarbour9
-https://starsnatwalker.com/players/elise-barbour/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/elise-barbour/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 *Why this hook:* the strongest single profile on the roster. "No. 1 ERA in the state" is unambiguous, and "started and won the state title game as a freshman" is the story underneath the ranking.
@@ -260,7 +260,7 @@ Baylee Giese Edney is a true utility bat — first, third, and the outfield.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @BayGieseedney
-https://starsnatwalker.com/players/baylee-giese-edney/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/baylee-giese-edney/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 *Why this hook:* three homers with two slams in a regional final is the single most arresting line in the whole series. **This post deserves film — if any exists, get it before Sep 17.**
@@ -283,7 +283,7 @@ Ayn Parker Usry batted .400 at PGF Nationals with multiple steals after a summer
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @AynParkerUsry
-https://starsnatwalker.com/players/ayn-parker-usry/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/ayn-parker-usry/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 *Why this hook:* a laser-timed 60 is unarguable — no projection, no scout's opinion. The .400 at PGF Nationals proves the speed plays against real competition.
@@ -304,7 +304,7 @@ Aggressive on the bases, pressures defenses
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @KelseyFliss
-https://starsnatwalker.com/players/kelsey-fliss/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/kelsey-fliss/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 ⚠️ **No stats or film on file.** The regional ranking carries it. **Ask for a 60 time and outfield velo before Sep 24** — for a center fielder those are the two numbers coaches want.
@@ -327,7 +327,7 @@ Top 100 National Elite Pitcher/Hitter Duo Hotlist
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @KLamanche2011
-https://starsnatwalker.com/players/kendall-lamanche/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/kendall-lamanche/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 *Why this hook:* "No. 1 in the region" is the whole post. **Would be much stronger with a velo number — worth asking before Sep 29.**
@@ -347,7 +347,7 @@ No. 14 Southeast Region · Select 30 National · USA HPP National Identifier inv
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @RileyWalker2029
-https://starsnatwalker.com/players/riley-walker/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/riley-walker/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 ⚠️ **No pop time on file** — the number every catcher post needs. **Get it before Oct 1.**
@@ -370,7 +370,7 @@ Line Drive Media Top 100 — Class of 2029
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @nataliehall2029
-https://starsnatwalker.com/players/natalie-hall/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/natalie-hall/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 *Why this hook:* a perfect game with 14 K in a varsity debut is the best story on the roster, and zero walks with a 0.00 ERA backs it up. **She has no film. This is the single highest-value film ask on the team** — a USA All-American lefty with these numbers should not be a card post.

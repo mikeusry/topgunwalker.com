@@ -6,7 +6,7 @@ import players from '../data/players.json';
 import { generatePlayerShortSlug, generatePlayerSlug } from '../lib/slug';
 
 /**
- * starsnatwalker.com/<firstname> → the player's page, tagged so clicks from X
+ * topgunwalker.com/<firstname> → the player's page, tagged so clicks from X
  * land in Profile Views. Derived from players.json at build time so the list
  * can never drift from the roster.
  *

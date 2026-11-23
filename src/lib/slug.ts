@@ -25,7 +25,7 @@ export function generatePlayerSlug(firstName: string, lastName: string): string 
 }
 
 /**
- * Short link for social posts: starsnatwalker.com/<first word of first name>.
+ * Short link for social posts: topgunwalker.com/<first word of first name>.
  * "Ayn Parker" → "ayn". Uniqueness is enforced at build time by the
  * short-links integration, not here.
  */

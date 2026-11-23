@@ -28,7 +28,7 @@ npm run preview
 
 This site is automatically deployed to Cloudflare Pages on push to `main`.
 
-**Live URL:** https://starsnatwalker.com
+**Live URL:** https://topgunwalker.com
 
 ### Manual Deploy
 

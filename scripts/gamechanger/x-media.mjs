@@ -5,7 +5,7 @@
 //   TWITTERAPI_IO_KEY=... node scripts/gamechanger/x-media.mjs [--video] <handle> ... > media.json
 //
 // The key lives in ~/CODING/program-match/.env (TWITTERAPI_IO_KEY), so from
-// program-match: node --env-file=.env ../starsnatwalker.com/scripts/gamechanger/x-media.mjs ...
+// program-match: node --env-file=.env ../topgunwalker.com/scripts/gamechanger/x-media.mjs ...
 // Append ?name=large to a pbs.twimg.com media URL for full size.
 
 const KEY = process.env.TWITTERAPI_IO_KEY;

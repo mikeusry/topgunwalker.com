@@ -57,7 +57,7 @@ function scoreBot(request: Request, body: TrackPayload): { isBot: boolean; reaso
   //     player. Real coaches arrive from email (?c=&s=), search, or direct — never
   //     by walking our internal hub. The browser sends document.referrer in the
   //     payload; we enforce it here so it can't be bypassed.
-  if (/starsnatwalker\.com\/(recruiting|pitchers|catchers|roster)\b/i.test(referrer)) {
+  if (/(topgunwalker|starsnatwalker)\.com\/(recruiting|pitchers|catchers|roster)\b/i.test(referrer)) {
     return { isBot: true, reason: 'referrer:own-hub-loop' };
   }
 

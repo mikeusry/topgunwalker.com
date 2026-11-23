@@ -116,7 +116,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       ${data.achievements ? `<h3>Achievements</h3><p>${esc(data.achievements)}</p>` : ''}
       ${data.whyStars ? `<h3>Why Stars</h3><p>${esc(data.whyStars)}</p>` : ''}
       <hr>
-      <p style="color:#666;font-size:12px;">Submitted via starsnatwalker.com/tryout at ${new Date().toLocaleString()}</p>
+      <p style="color:#666;font-size:12px;">Submitted via topgunwalker.com/tryout at ${new Date().toLocaleString()}</p>
     `;
 
     const emailText =
