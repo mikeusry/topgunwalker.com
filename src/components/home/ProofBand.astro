@@ -1,0 +1,26 @@
+---
+// Credentials band — team.achievements, newest/best first.
+import team from '../../data/team.json';
+const items = team.achievements ?? [];
+---
+
+<section class="pb bg-tg-orange text-white py-10 md:py-12 overflow-hidden">
+  <div class="container-narrow">
+    <ul class="pb-list">
+      {items.map((a: string, i: number) => (
+        <li class:list={['pb-item', i === 0 && 'pb-item--lead']}>
+          <span class="pb-star" aria-hidden="true">★</span>
+          <span>{a}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .pb { background-image: repeating-linear-gradient(-55deg, transparent 0 22px, rgb(255 255 255 / .05) 22px 44px); }
+  .pb-list { display: grid; gap: 14px 32px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .pb-item { display: flex; gap: 10px; align-items: flex-start; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; font-size: 17px; line-height: 1.15; }
+  .pb-item--lead { font-size: 21px; }
+  .pb-star { color: var(--color-tg-navy-deep); }
+</style>

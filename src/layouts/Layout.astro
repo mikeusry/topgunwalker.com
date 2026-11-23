@@ -91,7 +91,7 @@ const organizationStructuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationStructuredData)} />
 
     <!-- Preload LCP image -->
-    <link rel="preload" as="image" href="/team.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href={Astro.url.pathname === "/" ? "/images/pgf-ga-smtm-2026-16u-champs.webp" : "/team.webp"} type="image/webp" fetchpriority="high" />
 
     <!-- Fonts - Non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
