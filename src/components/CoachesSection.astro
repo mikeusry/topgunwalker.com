@@ -9,31 +9,31 @@ function generateSlug(name: string): string {
 // Row 1: on-field coaches. Row 2: recruiting coordinator + administrative coach.
 const isFieldCoach = (c: { title: string }) => !/administrative/i.test(c.title);
 const rows = [
-  { staff: team.coaches.filter(isFieldCoach), grid: "md:grid-cols-3" },
-  { staff: [team.recruitingCoordinator, ...team.coaches.filter((c) => !isFieldCoach(c))], grid: "md:grid-cols-2 max-w-3xl mx-auto mt-6" },
+  { staff: team.coaches.filter(isFieldCoach), grid: "grid-cols-2 md:grid-cols-3" },
+  { staff: [team.recruitingCoordinator, ...team.coaches.filter((c) => !isFieldCoach(c))], grid: "grid-cols-2 max-w-3xl mx-auto mt-3 md:mt-6" },
 ];
 ---
 
 <section id="coaches" class="section-padding bg-white">
   <div class="container-narrow">
-    <div class="text-center mb-12">
+    <div class="text-center mb-8 md:mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
         Our Coaching Staff
       </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
         Meet the dedicated coaches behind Top Gun National Walker. Our staff brings experience, passion, and a commitment to developing complete student-athletes.
       </p>
     </div>
 
     {rows.map((row) => (
-    <div class={`grid gap-6 ${row.grid}`}>
+    <div class={`grid gap-3 md:gap-6 coach-row ${row.grid}`}>
       {row.staff.map((coach) => (
-        <a href={`/staff/${generateSlug(coach.name)}/`} class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group block">
+        <a href={`/staff/${generateSlug(coach.name)}/`} class="bg-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all group block">
           {coach.photo ? (
             <img
               src={coach.photo}
               alt={coach.name}
-              class="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover mx-auto mb-3 md:mb-4"
             />
           ) : (
             <div class="w-20 h-20 bg-stars-navy rounded-full flex items-center justify-center mx-auto mb-4">
@@ -43,12 +43,12 @@ const rows = [
             </div>
           )}
           <div class="text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-stars-blue transition-colors">{coach.name}</h3>
-            <p class="text-stars-blue font-medium text-sm mb-3">{coach.title}</p>
+            <h3 class="text-base md:text-xl font-bold text-gray-900 mb-1 group-hover:text-stars-blue transition-colors">{coach.name}</h3>
+            <p class="text-stars-blue font-medium text-xs md:text-sm mb-2 md:mb-3">{coach.title}</p>
             {coach.bio && (
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">{coach.bio}</p>
+              <p class="hidden md:block text-gray-600 text-sm mb-4 line-clamp-3">{coach.bio}</p>
             )}
-            <span class="inline-flex items-center gap-2 text-sm font-medium text-stars-navy group-hover:text-stars-blue transition-colors">
+            <span class="inline-flex items-center gap-2 text-xs md:text-sm font-medium text-stars-navy group-hover:text-stars-blue transition-colors">
               View Profile →
             </span>
           </div>
@@ -58,3 +58,10 @@ const rows = [
     ))}
   </div>
 </section>
+
+<style>
+  /* Phones: center a lone last card instead of leaving a hole beside it. */
+  @media (max-width: 767px) {
+    .coach-row > a:last-child:nth-child(odd) { grid-column: span 2; width: calc(50% - 6px); margin-inline: auto; }
+  }
+</style>
