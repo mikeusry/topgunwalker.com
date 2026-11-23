@@ -36,10 +36,10 @@
     },
     {
       "name": "Adrian Diaz",
-      "title": "Outfield Coach",
+      "title": "Administrative Coach",
       "email": "adrian.diaz@topgunwalker.com",
       "photo": "https://res.cloudinary.com/southland-organics/image/upload/v1779807295/StarsNationalWalker/adrian-diaz.jpg",
-      "bio": "Coach Adrian specializes in outfield development, teaching players to read balls off the bat, take efficient routes, and make accurate throws. His player-first mentality and ability to communicate adjustments help outfielders develop into confident, reliable defenders."
+      "bio": "Coach Adrian Diaz is the administrative coach for Top Gun National Walker, after previously leading the team’s outfield development. His player-first mentality and clear communication keep the program organized so players can focus on the field."
     },
     {
       "name": "Jeremiah Perez",
@@ -47,6 +47,12 @@
       "email": "jeremiah.perez@topgunwalker.com",
       "photo": "https://res.cloudinary.com/southland-organics/image/upload/v1779807423/StarsNationalWalker/jeremiah-perez.jpg",
       "bio": "Coach Jeremiah focuses on hitting and infield development, with a keen eye for mechanical adjustments that unlock power and consistency at the plate. His positive coaching style and attention to detail help players build confidence and reach their full potential."
+    },
+    {
+      "name": "Michael Orlando",
+      "title": "Outfield Coach",
+      "photo": "/images/coaches/michael-orlando.webp",
+      "bio": "Coach Michael Orlando leads outfield development for Top Gun National Walker. His daughter, Cara Orlando (Class of 2028), plays outfield for the team."
     }
   ],
   "headCoach": {
