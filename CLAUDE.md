@@ -177,8 +177,10 @@ nothing alerts you. Check with `command grep -rn "twimg\.com" src/` — plain
   `schedule.json` event flips `/events/[slug]` to a result hero and drops it from
   "Upcoming Events". Keep the event in BOTH `events` and `pastEvents` — `/events/[slug]`
   generates its page from `events`, so removing it 404s the page.
-- **`team.achievements[0]` drives the OG share card** (`src/pages/og.png.ts` renders it
-  as a gold banner). Best current credential goes first.
+- **`src/data/feature-result.json` drives the homepage hero, trophy case lead tile, and
+  the OG share card** (`src/pages/og.png.ts`). A new headline result = edit that one
+  file. The OG card's second line (Alliance runner-up) is a hardcoded `SECONDARY` const.
+  `team.achievements` feeds only the orange titles band — newest/best first.
 
 ## EIS nominations — `scripts/gamechanger/`
 
