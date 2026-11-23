@@ -25,9 +25,9 @@ const past: Trophy[] = (schedule.pastEvents ?? [])
     event: e.name,
     when: e.dates,
     where: e.location,
-    img: e.photos?.[0]?.publicId
+    img: e.trophyPhoto ?? (e.photos?.[0]?.publicId
       ? buildCloudinaryUrl({ publicId: e.photos[0].publicId, width: 640, height: 400, crop: 'fill', gravity: 'auto' })
-      : undefined,
+      : undefined),
     href: e.featured ? '#schedule' : undefined,
   }));
 
