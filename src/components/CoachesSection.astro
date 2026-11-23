@@ -6,10 +6,11 @@ function generateSlug(name: string): string {
   return name.toLowerCase().replace(/\s+/g, '-');
 }
 
-// Combine all coaches and recruiting coordinator into one array
-const allStaff = [
-  ...team.coaches,
-  team.recruitingCoordinator
+// Row 1: on-field coaches. Row 2: recruiting coordinator + administrative coach.
+const isFieldCoach = (c: { title: string }) => !/administrative/i.test(c.title);
+const rows = [
+  { staff: team.coaches.filter(isFieldCoach), grid: "md:grid-cols-3" },
+  { staff: [team.recruitingCoordinator, ...team.coaches.filter((c) => !isFieldCoach(c))], grid: "md:grid-cols-2 max-w-3xl mx-auto mt-6" },
 ];
 ---
 
@@ -24,8 +25,9 @@ const allStaff = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {allStaff.map((coach) => (
+    {rows.map((row) => (
+    <div class={`grid gap-6 ${row.grid}`}>
+      {row.staff.map((coach) => (
         <a href={`/staff/${generateSlug(coach.name)}/`} class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group block">
           {coach.photo ? (
             <img
@@ -53,5 +55,6 @@ const allStaff = [
         </a>
       ))}
     </div>
+    ))}
   </div>
 </section>
