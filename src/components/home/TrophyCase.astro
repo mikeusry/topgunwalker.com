@@ -38,7 +38,7 @@ const trophies = [feature, ...past];
   <div class="container-narrow py-10 md:py-12">
     <div class="flex items-baseline justify-between mb-5">
       <h2 class="tc-label">Trophy case</h2>
-      <p class="text-xs text-white/50 font-mono">{trophies.length} titles · newest first</p>
+      <p class="hidden sm:block text-xs text-white/50 font-mono">{trophies.length} titles · newest first</p>
     </div>
     <ol class="tc-row">
       {trophies.map((t, i) => {
