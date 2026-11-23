@@ -24,12 +24,18 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
   <div class="container-narrow relative pt-16 pb-10 md:pt-28 md:pb-14">
     <p class="hh-kicker">
       <span class="hh-wing" aria-hidden="true"></span>
-      {r.event} · {r.dates}
+      {r.dates} · {r.location}
     </p>
 
-    <h1 class="hh-title">
-      <span class="block text-white/90">{r.headline.split(' ')[0]}</span>
-      <span class="block text-tg-orange">{r.headline.split(' ').slice(1).join(' ')}</span>
+    <h1>
+      <span class="hh-event">
+        <span class="hh-pgf">{r.org}</span>
+        <span class="hh-event-name">{r.eventShort}<small>{r.region}</small></span>
+      </span>
+      <span class="hh-title">
+        <span class="block text-white/90">{r.headline.split(' ')[0]}</span>
+        <span class="block text-tg-orange">{r.headline.split(' ').slice(1).join(' ')}</span>
+      </span>
     </h1>
 
     <div class="hh-record" aria-label={`${r.record} on the weekend`}>
@@ -102,7 +108,12 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
     background: repeating-linear-gradient(180deg, var(--color-tg-orange) 0 2px, transparent 2px 4px);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
   }
+  .hh-event { display: inline-flex; align-items: stretch; margin-top: 16px; border: 2px solid #fff; border-radius: 4px; overflow: hidden; animation: hh-rise .6s cubic-bezier(.2,.8,.2,1) both; }
+  .hh-pgf { display: grid; place-items: center; padding: 0 16px; background: #fff; color: var(--color-tg-navy-deep); font-family: var(--font-heading); font-weight: 700; font-size: clamp(34px, 5vw, 54px); line-height: 1; letter-spacing: .02em; }
+  .hh-event-name { display: flex; flex-direction: column; justify-content: center; padding: 8px 16px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(22px, 3.2vw, 36px); line-height: 1; color: #fff; }
+  .hh-event-name small { font-size: 0.42em; letter-spacing: .3em; color: var(--color-tg-orange); margin-top: 5px; }
   .hh-title {
+    display: block;
     margin-top: 14px;
     font-family: var(--font-heading); font-weight: 700;
     text-transform: uppercase; line-height: 0.88; letter-spacing: -0.01em;

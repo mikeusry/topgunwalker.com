@@ -9,8 +9,8 @@ import { buildCloudinaryUrl } from '../../lib/cloudinary';
 type Trophy = { result: string; event: string; when: string; where: string; img?: string; href?: string; record?: string };
 
 const feature: Trophy = {
-  result: r.headline,
-  event: r.event,
+  result: `${r.org} ${r.eventShort}`,
+  event: `16U Co-Champions · ${r.region}`,
   when: r.dates,
   where: r.location,
   img: r.photo,
