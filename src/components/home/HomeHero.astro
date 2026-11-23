@@ -4,7 +4,6 @@
 import r from '../../data/feature-result.json';
 
 const wins = r.bracket.length;
-const oneRun = r.bracket.filter((g) => g.us - g.them === 1).length;
 const runsFor = r.bracket.reduce((s, g) => s + g.us, 0);
 const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
 ---
@@ -24,7 +23,7 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
   <div class="container-narrow relative pt-16 pb-10 md:pt-28 md:pb-14">
     <p class="hh-kicker">
       <span class="hh-wing" aria-hidden="true"></span>
-      {r.dates} · {r.location}
+      {r.dates}
     </p>
 
     <h1>
@@ -42,11 +41,6 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
       <span class="hh-record-num">{r.record}</span>
       <span class="hh-record-label">on the<br />weekend</span>
     </div>
-
-    <p class="mt-5 max-w-xl text-lg md:text-xl text-white/85">
-      Unbeaten in {r.location}: {wins}-0 in bracket play, {oneRun} of those wins by a single run.
-      Shared the title with {r.coChampion}.
-    </p>
 
     <div class="mt-8 flex flex-col sm:flex-row gap-3">
       <a href="#board" class="hh-btn hh-btn--primary">Scout the roster</a>
