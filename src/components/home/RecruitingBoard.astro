@@ -1,0 +1,132 @@
+---
+// Recruiting board: the whole roster as scannable tiles with the numbers a
+// college coach filters on. Derives entirely from players.json.
+import players from '../../data/players.json';
+import { generatePlayerSlug } from '../../lib/slug';
+import { showPlayerPhoto, playerInitials } from '../../lib/player-photo';
+
+const group = (pos: string) => {
+  const p = pos.toLowerCase();
+  if (/(rhp|lhp|pitch)/.test(p)) return 'P';
+  if (/catch/.test(p)) return 'C';
+  if (/(infield|1b|3b|ss|2b)/.test(p)) return 'IF';
+  return 'OF';
+};
+const ft = (inches?: number | null) => (inches ? `${Math.floor(inches / 12)}'${inches % 12}"` : null);
+
+const board = [...players]
+  .sort((a, b) => a.gradYear - b.gradYear || a.lastName.localeCompare(b.lastName))
+  .map((p) => ({
+    ...p,
+    slug: generatePlayerSlug(p.firstName, p.lastName),
+    group: group(p.position),
+    height: ft(p.heightInches),
+    videoCount: p.videos?.muxVideos?.length ?? 0,
+    visiblePhoto: showPlayerPhoto(p),
+    initials: playerInitials(p.firstName, p.lastName),
+  }));
+const years = [...new Set(board.map((p) => p.gradYear))].sort();
+const groups = [['P', 'Pitchers'], ['C', 'Catchers'], ['IF', 'Infield'], ['OF', 'Outfield']];
+---
+
+<section id="board" class="rb bg-tg-navy-deep text-white py-16 md:py-24">
+  <div class="container-narrow">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+      <div>
+        <span class="tg-eyebrow">Recruiting board · {board.length} players</span>
+        <h2 class="rb-h2">Find your player</h2>
+      </div>
+      <div class="rb-filters" role="group" aria-label="Filter roster">
+        <button class="rb-chip is-on" data-f="all">All</button>
+        {years.map((y) => <button class="rb-chip" data-f={`y${y}`}>{y}</button>)}
+        <span class="rb-sep" aria-hidden="true"></span>
+        {groups.map(([k, l]) => <button class="rb-chip" data-f={`g${k}`}>{l}</button>)}
+      </div>
+    </div>
+
+    <ul class="rb-grid">
+      {board.map((p) => (
+        <li class="rb-item" data-y={`y${p.gradYear}`} data-g={`g${p.group}`}>
+          <a href={`/players/${p.slug}/`} class="rb-tile group">
+            <div class="rb-photo">
+              {p.visiblePhoto ? (
+                <img src={p.photoUrl} alt={`${p.firstName} ${p.lastName}`} loading="lazy" />
+              ) : (
+                <span class="rb-initials">{p.initials}</span>
+              )}
+              <span class="rb-year">{p.gradYear}</span>
+              {p.videoCount > 0 && (
+                <span class="rb-video" title={`${p.videoCount} video${p.videoCount > 1 ? 's' : ''}`}>
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  {p.videoCount}
+                </span>
+              )}
+              {p.recruitingStatus === 'committed' && <span class="rb-committed">Committed</span>}
+            </div>
+            <div class="rb-body">
+              <p class="rb-first">{p.firstName}</p>
+              <p class="rb-last">{p.lastName}</p>
+              <p class="rb-pos">{p.position}</p>
+              <dl class="rb-data">
+                <div><dt>B/T</dt><dd>{p.bats && p.throws ? `${p.bats}/${p.throws}` : '—'}</dd></div>
+                <div><dt>HT</dt><dd>{p.height ?? '—'}</dd></div>
+                <div><dt>GPA</dt><dd>{p.gpa ? Number(p.gpa).toFixed(2) : '—'}</dd></div>
+              </dl>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-10 flex flex-wrap gap-4 items-center justify-between border-t border-white/10 pt-6">
+      <p class="text-white/70">Coaches: full stats, video, and contact in one table.</p>
+      <a href="/coaches/" class="inline-flex items-center gap-2 font-semibold text-tg-orange hover:text-white">Open the coach view →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('.rb-chip');
+  const items = document.querySelectorAll<HTMLElement>('.rb-item');
+  chips.forEach((c) =>
+    c.addEventListener('click', () => {
+      chips.forEach((x) => x.classList.toggle('is-on', x === c));
+      const f = c.dataset.f!;
+      items.forEach((it) => {
+        const show = f === 'all' || it.dataset.y === f || it.dataset.g === f;
+        it.hidden = !show;
+      });
+    }),
+  );
+</script>
+
+<style>
+  .rb { background-image: radial-gradient(ellipse at 100% 0%, rgb(222 94 47 / 0.16), transparent 50%); }
+  .rb-h2 { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(36px, 5vw, 56px); line-height: .95; margin-top: 8px; }
+  .rb-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .rb-sep { width: 1px; height: 22px; background: rgb(255 255 255 / .2); margin: 0 4px; }
+  .rb-chip {
+    padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    border: 1px solid rgb(255 255 255 / .25); color: rgb(255 255 255 / .85); transition: all .15s;
+  }
+  .rb-chip:hover { border-color: #fff; color: #fff; }
+  .rb-chip.is-on { background: var(--color-tg-orange); border-color: var(--color-tg-orange); color: #fff; }
+  .rb-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
+  .rb-item[hidden] { display: none; }
+  .rb-tile { display: block; border-radius: 6px; overflow: hidden; background: rgb(255 255 255 / .05); border: 1px solid rgb(255 255 255 / .1); transition: transform .18s, border-color .18s, box-shadow .18s; }
+  .rb-tile:hover { transform: translateY(-4px); border-color: var(--color-tg-orange); box-shadow: 0 18px 40px -18px rgb(0 0 0 / .8); }
+  .rb-photo { position: relative; aspect-ratio: 4/5; background: #fff; display: grid; place-items: center; overflow: hidden; }
+  .rb-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+  .rb-tile:hover .rb-photo img { transform: scale(1.04); }
+  .rb-initials { color: var(--color-tg-navy); font-weight: 800; font-size: 34px; }
+  .rb-year { position: absolute; top: 8px; left: 8px; background: var(--color-tg-navy); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 12px; padding: 2px 8px; border-radius: 3px; }
+  .rb-video { position: absolute; top: 8px; right: 8px; display: inline-flex; gap: 3px; align-items: center; background: var(--color-tg-orange); color: #fff; font-weight: 700; font-size: 11px; padding: 3px 7px; border-radius: 3px; }
+  .rb-committed { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; background: rgb(20 32 74 / .9); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; padding: 4px; }
+  .rb-body { padding: 12px 12px 14px; }
+  .rb-first { font-size: 12px; color: rgb(255 255 255 / .65); line-height: 1; }
+  .rb-last { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: 22px; line-height: 1.05; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .rb-pos { font-size: 12px; color: var(--color-tg-orange); font-weight: 600; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .rb-data { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 10px; border-top: 1px solid rgb(255 255 255 / .1); padding-top: 8px; }
+  .rb-data dt { font-size: 9px; letter-spacing: .14em; color: rgb(255 255 255 / .5); }
+  .rb-data dd { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 13px; }
+</style>

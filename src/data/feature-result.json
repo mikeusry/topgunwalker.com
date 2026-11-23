@@ -1,0 +1,167 @@
+{
+  "_comment": "Homepage feature result. Stats come from the cited Line Drive Media recap; record comes from recordSource. Never add a stat without a source.",
+  "headline": "16U Co-Champions",
+  "event": "PGF Georgia Show Me The Money",
+  "org": "PGF",
+  "eventShort": "Show Me The Money",
+  "region": "Georgia",
+  "dates": "Nov 21–22, 2026",
+  "location": "Cumming, GA",
+  "record": "8-0",
+  "recordSource": "Full weekend (pool + bracket) per Mike Usry, 2026-11-23. Line Drive Media lists only the 5 bracket games.",
+  "coChampion": "Beverly Bandits Premier-Conroy",
+  "finalNote": "Both teams reached the 16U final and chose not to play it.",
+  "photo": "/images/pgf-ga-smtm-2026-16u-champs.webp",
+  "photoAlt": "Top Gun National Walker players and coaches holding the PGF Georgia Show Me The Money Champions banner",
+  "source": {
+    "name": "Line Drive Media",
+    "url": "https://linedrivemedia.com/news/event-recap-18u-16u-14u-champs-crowned-at-pgf-georgia-show-me-the-money-nov-22-2026/"
+  },
+  "quote": {
+    "text": "It was a total team effort throughout the tournament.",
+    "by": "Joe Walker, Head Coach"
+  },
+  "bracket": [
+    {
+      "opponent": "Top Gun 2011 MS",
+      "us": 10,
+      "them": 0
+    },
+    {
+      "opponent": "GA Bolts 2028-Perkins",
+      "us": 3,
+      "them": 2
+    },
+    {
+      "opponent": "TN Mojo 29/30-Munahan",
+      "us": 4,
+      "them": 2
+    },
+    {
+      "opponent": "St. Louis Chaos 2010 National-Gil",
+      "us": 4,
+      "them": 3
+    },
+    {
+      "opponent": "USA Prime National-Halstead",
+      "us": 4,
+      "them": 3
+    }
+  ],
+  "leaders": [
+    {
+      "firstName": "Riley",
+      "lastName": "Walker",
+      "role": "C",
+      "stats": [
+        [
+          ".636",
+          "AVG"
+        ],
+        [
+          "1.492",
+          "OPS"
+        ],
+        [
+          "15",
+          "RBI"
+        ]
+      ]
+    },
+    {
+      "firstName": "Kelsey",
+      "lastName": "Fliss",
+      "role": "OF",
+      "stats": [
+        [
+          ".474",
+          "AVG"
+        ],
+        [
+          "1.425",
+          "OPS"
+        ]
+      ]
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Owen",
+      "role": "SS",
+      "stats": [
+        [
+          ".409",
+          "AVG"
+        ],
+        [
+          "10",
+          "R"
+        ]
+      ]
+    },
+    {
+      "firstName": "Elise",
+      "lastName": "Barbour",
+      "role": "P",
+      "stats": [
+        [
+          "3-0",
+          "W-L"
+        ],
+        [
+          "1.27",
+          "ERA"
+        ],
+        [
+          "31",
+          "K"
+        ],
+        [
+          "22",
+          "IP"
+        ]
+      ]
+    },
+    {
+      "firstName": "Kendall",
+      "lastName": "LaManche",
+      "role": "P",
+      "stats": [
+        [
+          "3-0",
+          "W-L"
+        ],
+        [
+          "0.58",
+          "ERA"
+        ],
+        [
+          ".260",
+          "BAA"
+        ]
+      ]
+    },
+    {
+      "firstName": "Natalie",
+      "lastName": "Hall",
+      "role": "P",
+      "stats": [
+        [
+          "2-0",
+          "W-L"
+        ],
+        [
+          "0.58",
+          "ERA"
+        ],
+        [
+          ".177",
+          "BAA"
+        ],
+        [
+          "11",
+          "K"
+        ]
+      ]
+    }
+  ]
+}

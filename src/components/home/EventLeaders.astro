@@ -1,0 +1,88 @@
+---
+// Tournament leaders from the feature result, linked to each player's page.
+// Players are resolved against players.json — no second roster list.
+import r from '../../data/feature-result.json';
+import players from '../../data/players.json';
+import { generatePlayerSlug } from '../../lib/slug';
+import { showPlayerPhoto } from '../../lib/player-photo';
+
+const leaders = r.leaders.map((l) => {
+  const p = players.find((x) => x.firstName === l.firstName && x.lastName === l.lastName);
+  return { ...l, player: p, slug: generatePlayerSlug(l.firstName, l.lastName) };
+});
+const hitters = leaders.filter((l) => l.role !== 'P');
+const pitchers = leaders.filter((l) => l.role === 'P');
+---
+
+<section class="el bg-white py-16 md:py-24">
+  <div class="container-narrow">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+      <div>
+        <span class="tg-eyebrow">{r.event}</span>
+        <h2 class="el-h2">Who did the damage</h2>
+      </div>
+      <blockquote class="max-w-sm border-l-4 border-tg-orange pl-4 text-tg-muted">
+        <p class="text-lg italic text-tg-ink">“{r.quote.text}”</p>
+        <cite class="mt-1 block text-sm not-italic">— {r.quote.by}</cite>
+      </blockquote>
+    </div>
+
+    {[['At the plate', hitters], ['In the circle', pitchers]].map(([label, group]) => (
+      <div class="mb-10 last:mb-0">
+        <h3 class="el-group">{label}</h3>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {(group as typeof leaders).map((l) => (
+            <a href={`/players/${l.slug}/`} class="el-card group">
+              <div class="el-photo">
+                {l.player && showPlayerPhoto(l.player) ? (
+                  <img src={l.player.photoUrl} alt={`${l.firstName} ${l.lastName}`} loading="lazy" />
+                ) : (
+                  <span class="el-initials">{l.firstName[0]}{l.lastName[0]}</span>
+                )}
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="el-name">{l.firstName} <strong>{l.lastName}</strong></p>
+                <p class="el-meta">{l.role} · Class of {l.player?.gradYear}</p>
+                <dl class="el-stats">
+                  {l.stats.map(([v, k]) => (
+                    <div><dt>{k}</dt><dd>{v}</dd></div>
+                  ))}
+                </dl>
+              </div>
+              <span class="el-arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <p class="mt-8 text-xs text-tg-muted">
+      Stats as reported by <a class="underline hover:text-tg-orange" href={r.source.url} target="_blank" rel="noopener">{r.source.name}</a>.
+    </p>
+  </div>
+</section>
+
+<style>
+  .el-h2 { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(36px, 5vw, 56px); line-height: 0.95; color: var(--color-tg-navy); margin-top: 8px; }
+  .el-group { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--color-tg-muted); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .el-group::after { content: ''; height: 1px; flex: 1; background: var(--color-tg-line); }
+  .el-card {
+    position: relative; display: flex; gap: 14px; align-items: center;
+    padding: 14px; border: 1px solid var(--color-tg-line); border-radius: 6px; background: #fff;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+  }
+  .el-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--color-tg-orange); border-radius: 6px 0 0 6px; transform: scaleY(0); transition: transform .2s; }
+  .el-card:hover { border-color: var(--color-tg-navy); box-shadow: 0 10px 30px -12px rgb(20 32 74 / .35); transform: translateY(-2px); }
+  .el-card:hover::before { transform: scaleY(1); }
+  .el-photo { width: 76px; height: 92px; flex: none; border-radius: 4px; overflow: hidden; background: var(--color-tg-navy); display: grid; place-items: center; }
+  .el-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .el-initials { color: #fff; font-weight: 800; font-size: 22px; }
+  .el-name { font-family: var(--font-heading); text-transform: uppercase; font-size: 20px; line-height: 1; color: var(--color-tg-navy); }
+  .el-name strong { font-weight: 700; }
+  .el-meta { font-size: 12px; color: var(--color-tg-muted); margin-top: 3px; }
+  .el-stats { display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
+  .el-stats dt { font-size: 10px; letter-spacing: .14em; color: var(--color-tg-muted); text-transform: uppercase; }
+  .el-stats dd { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 18px; color: var(--color-tg-ink); }
+  .el-arrow { color: var(--color-tg-line); font-size: 20px; transition: color .15s, transform .15s; }
+  .el-card:hover .el-arrow { color: var(--color-tg-orange); transform: translateX(3px); }
+</style>
