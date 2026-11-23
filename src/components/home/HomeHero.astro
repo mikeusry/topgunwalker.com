@@ -32,9 +32,14 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
       <span class="block text-tg-orange">{r.headline.split(' ').slice(1).join(' ')}</span>
     </h1>
 
+    <div class="hh-record" aria-label={`${r.record} on the weekend`}>
+      <span class="hh-record-num">{r.record}</span>
+      <span class="hh-record-label">on the<br />weekend</span>
+    </div>
+
     <p class="mt-5 max-w-xl text-lg md:text-xl text-white/85">
-      Top Gun National Walker went {wins}-0 through bracket play at {r.location}, with {oneRun} of those
-      wins decided by a single run. Shared title with {r.coChampion}.
+      Unbeaten in {r.location}: {wins}-0 in bracket play, {oneRun} of those wins by a single run.
+      Shared the title with {r.coChampion}.
     </p>
 
     <div class="mt-8 flex flex-col sm:flex-row gap-3">
@@ -54,7 +59,7 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
     <div class="container-narrow py-5">
       <div class="flex items-baseline justify-between gap-4 mb-3">
         <h2 class="hh-board-label">Bracket run</h2>
-        <p class="text-xs text-white/60 font-mono">RUNS {runsFor}–{runsAgainst}</p>
+        <p class="text-xs text-white/60 font-mono">BRACKET RUNS {runsFor}–{runsAgainst}</p>
       </div>
       <ol class="hh-board">
         {r.bracket.map((g, i) => (
@@ -107,6 +112,10 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
   .hh-title span + span { animation-delay: 0.12s; }
   /* Transform only — never start from opacity 0, so text is visible even if the animation never runs. */
   @keyframes hh-rise { from { transform: translateY(18px); } to { transform: none; } }
+
+  .hh-record { display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; padding: 6px 16px 6px 6px; background: #fff; color: var(--color-tg-navy); border-radius: 4px; }
+  .hh-record-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 800; font-size: 34px; line-height: 1; background: var(--color-tg-orange); color: #fff; padding: 6px 12px; border-radius: 3px; }
+  .hh-record-label { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: 15px; line-height: 1; letter-spacing: .08em; }
 
   .hh-btn {
     display: inline-flex; align-items: center; justify-content: center;
