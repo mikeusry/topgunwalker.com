@@ -100,7 +100,7 @@ and the team account never does either.
 system, and X traffic is exactly the case that would otherwise dissolve into `direct`.
 
 ```
-https://starsnatwalker.com/players/<slug>/?utm_source=x&utm_medium=social&utm_campaign=profile-series-<gradyear>
+https://topgunwalker.com/players/<slug>/?utm_source=x&utm_medium=social&utm_campaign=profile-series-<gradyear>
 ```
 
 **Verified end-to-end against production on 2026-08-09**, not assumed:

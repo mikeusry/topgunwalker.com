@@ -96,7 +96,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
       <hr>
       <p style="color: #666; font-size: 12px;">
-        Submitted via starsnatwalker.com/recruiting at ${new Date().toLocaleString()}
+        Submitted via topgunwalker.com/recruiting at ${new Date().toLocaleString()}
       </p>
     `;
 

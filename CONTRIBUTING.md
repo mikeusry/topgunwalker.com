@@ -6,8 +6,8 @@ Thank you for helping maintain and improve the Stars National Walker recruiting 
 
 ```bash
 # Clone repo
-git clone https://github.com/yourusername/starsnatwalker.com.git
-cd starsnatwalker.com
+git clone https://github.com/mikeusry/topgunwalker.com.git
+cd topgunwalker.com
 
 # Install dependencies
 npm install
@@ -297,7 +297,7 @@ Commits to `main` branch auto-deploy to Cloudflare Pages.
 2. Cloudflare Pages detects change
 3. Runs `npm run build`
 4. Deploys to production
-5. Live at https://starsnatwalker.com
+5. Live at https://topgunwalker.com
 
 **Typical deploy time:** 1-2 minutes
 
@@ -313,7 +313,7 @@ npx wrangler pages deploy dist
 
 ### Verifying Deployment
 
-1. Visit https://starsnatwalker.com
+1. Visit https://topgunwalker.com
 2. Check updated content appears
 3. Test new player pages
 4. Verify no broken links
@@ -366,7 +366,7 @@ npm run build 2>&1 | grep -i error
 ## Project Structure Reference
 
 ```
-starsnatwalker.com/
+topgunwalker.com/
 ├── src/
 │   ├── components/     # Reusable Astro components
 │   ├── data/           # JSON data files

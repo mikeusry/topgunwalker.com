@@ -28,7 +28,7 @@ const PDF = join(OUT_DIR, `EIS Class of ${CLASS} Nominations - for Joe.pdf`);
 const HTML = join(OUT_DIR, 'packet.html');
 
 const DEADLINE = 'Monday, Oct 5, 2026 at 11:59 PM Mountain (1:59 AM Tue Eastern)';
-const SITE = 'https://starsnatwalker.com';
+const SITE = 'https://topgunwalker.com';
 const coach = JSON.parse(readFileSync(join(CLASS_DIR, 'coach.json'), 'utf8'));
 // Already nominated per the EIS tracker as of 2026-10-02 (Maddie Diaz, Sara Utrera).
 const ALREADY_NOMINATED = new Set([

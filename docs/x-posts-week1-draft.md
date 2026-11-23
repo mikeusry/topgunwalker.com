@@ -20,7 +20,7 @@ Upload natively to X.
 > VISAA Indoor Track State Champion — 4x200 school AND state meet record (1:43)
 >
 > @Keirafrazier33
-> https://starsnatwalker.com/players/keira-frazier/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+> https://topgunwalker.com/players/keira-frazier/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 
 **Why this hook:** the track credentials are the differentiator. Plenty of 2028 middle
 infielders have a good exit velo; a state-record relay anchor with a 10.98 home-to-home is
@@ -43,7 +43,7 @@ video, and it's the one a coach can't teach.
 > 2026 WIAA State Champions
 >
 > @AustynKinch2028
-> https://starsnatwalker.com/players/austyn-kinch/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+> https://topgunwalker.com/players/austyn-kinch/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 
 **Why this hook:** 1.76 is the number that stops a catcher-hunting coach mid-scroll, and
 .543 with a 1.523 OPS is not a small-sample fluke over 28 games. Lead with the bat, land

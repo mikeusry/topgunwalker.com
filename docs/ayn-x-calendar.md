@@ -90,7 +90,7 @@ Nov 20–22  East Coast Sunshine Showcase — Clermont, FL
 
 2029 OF · Stars National Walker
 @StarsNatWalker
-https://starsnatwalker.com/players/ayn-parker-usry/
+https://topgunwalker.com/players/ayn-parker-usry/
 ```
 
 ### Thu Aug 20 — film

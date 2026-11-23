@@ -84,7 +84,7 @@ Owned page at `/links/` — not Later, Buffer Start Page, or any rented `linkin.
 
 **Rules:**
 - `noindex` — do not add to `sitemap.xml.ts`
-- Trailing slash: `https://starsnatwalker.com/links/`
+- Trailing slash: `https://topgunwalker.com/links/`
 - Button UTMs: `utm_source=instagram&utm_medium=organic_social&utm_campaign=link_in_bio`
 - Curated destinations only. No Instagram post grid.
 

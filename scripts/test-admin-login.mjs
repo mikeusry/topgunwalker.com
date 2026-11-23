@@ -2,7 +2,7 @@
 // the camps page carries the same admin nav as the rest of /admin/*.
 import { chromium } from 'playwright';
 
-const BASE = process.env.BASE || 'https://starsnatwalker.com';
+const BASE = process.env.BASE || 'https://topgunwalker.com';
 // Credentials come from the environment (same values as the ADMIN_USER /
 // ADMIN_PASS Pages secrets) — never hardcode them here.
 if (!process.env.ADMIN_USER || !process.env.ADMIN_PASS) {

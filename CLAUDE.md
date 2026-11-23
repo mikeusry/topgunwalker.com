@@ -4,6 +4,7 @@
 
 | Item | Value |
 |------|-------|
+| Domain | `topgunwalker.com` (repo `mikeusry/topgunwalker.com`). `starsnatwalker.com` 301s to it. |
 | Stack | Astro static, Cloudflare Pages, Supabase, SendGrid, Mux |
 | Deploy | `npx wrangler pages deploy dist --project-name starsnatwalker --commit-dirty=true` |
 | Build | `npm run build` |
@@ -11,6 +12,12 @@
 | Cloudinary | Cloud: `southland-organics`, Folder: `StarsNationalWalker` |
 | Admin | `/admin/` — credentials in Pages secrets `ADMIN_USER` / `ADMIN_PASS` (checked by `functions/api/admin-login.ts`) |
 | History | Dated changelog: `docs/HISTORY.md` |
+
+**`starsnatwalker` names that stay on purpose (domain moved 2026-11-23):**
+- Cloudflare Pages project `starsnatwalker` — owns topgunwalker.com and every secret; Pages projects can't be renamed.
+- Supabase `site = 'starsnatwalker'` key — changing it splits the view/inquiry history.
+- `mike@starsnatwalker.com` and `*@recruiting.starsnatwalker.com` — `recruiting.topgunwalker.com` has no MX record; inbound parse lives on the old domain.
+- `@starsnatwalker` Instagram/X handle — an external account, not ours to rename here.
 
 ## Deploy
 

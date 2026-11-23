@@ -35,7 +35,7 @@ Kierra Wunderlich is a 2x USSSA All-American — the circle or anywhere on the f
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @kierrawunder
-https://starsnatwalker.com/players/kierra-wunderlich/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/kierra-wunderlich/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ### Maddie · Thu Aug 27 · CHANGE
@@ -52,7 +52,7 @@ Maddie Diaz slaps out of the left side and puts pressure on the infield.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @MaddieDiaz2028
-https://starsnatwalker.com/players/maddie-diaz/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/maddie-diaz/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ### Lyla · Tue Sep 1 · NOTE ONLY
@@ -72,7 +72,7 @@ Sara Utrera is defense first. Big-moment bat on a national infield.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @Sara_Utrera2028
-https://starsnatwalker.com/players/sara-utrera/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/sara-utrera/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 6A stays on the card / her account.
@@ -90,7 +90,7 @@ Avery Jones is 6'0" and hits in the middle of the Stars 16U order.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @avery_jones28
-https://starsnatwalker.com/players/avery-jones/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/avery-jones/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ### Charlotte · Thu Sep 10 · CHANGE (small)
@@ -103,7 +103,7 @@ Charlotte Llaneza has both premium spots — crouch and the hot corner. Strong a
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @C_Llaneza02
-https://starsnatwalker.com/players/charlotte-llaneza/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
+https://topgunwalker.com/players/charlotte-llaneza/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2028
 ```
 
 ### Elise · Tue Sep 15 · CHANGE
@@ -120,7 +120,7 @@ No. 21 nationally — Line Drive Media 2029 Hot 100
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @EliseBarbour9
-https://starsnatwalker.com/players/elise-barbour/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/elise-barbour/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 ### Baylee · Thu Sep 17 · NOTE ONLY
@@ -141,7 +141,7 @@ Ayn Parker Usry ran an 8.86 laser 60 at the 5A Georgia Meet.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @AynParkerUsry
-https://starsnatwalker.com/players/ayn-parker-usry/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/ayn-parker-usry/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 Dropped the 2025 Atlantic Region line so 8.86 + PGF can breathe.
@@ -158,7 +158,7 @@ Kelsey Fliss is No. 15 in the Southeast — a 5'11" center fielder who covers gr
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @KelseyFliss
-https://starsnatwalker.com/players/kelsey-fliss/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/kelsey-fliss/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 ### Kendall · Tue Sep 29 · KEEP
@@ -182,7 +182,7 @@ Natalie Hall is a 2026 USA Softball All-American.
 2026 Alliance Fastpitch 16U Tier III National Runner-Up
 
 @nataliehall2029
-https://starsnatwalker.com/players/natalie-hall/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
+https://topgunwalker.com/players/natalie-hall/?utm_source=x&utm_medium=social&utm_campaign=profile-series-2029
 ```
 
 ---
