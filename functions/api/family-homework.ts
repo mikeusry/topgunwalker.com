@@ -16,7 +16,7 @@ const headers = {
 };
 
 const FROM_EMAIL = 'mike@southlandorganics.com';
-const FROM_NAME = 'Stars National Walker';
+const FROM_NAME = 'Top Gun National Walker';
 const TO_EMAIL = 'mike@starsnatwalker.com';
 
 async function sb(env: Env, path: string, init: RequestInit = {}) {
