@@ -7,7 +7,7 @@
     "Arrive the night before unless the event says you can drive in that morning.",
     "Book the team hotel link. This is stay-to-play."
   ],
-  "hotels": "East Coast, Starz Gold, Sunshine, Scenic City, and Lone Star hotel blocks are posted. ACFL when the block is sent.",
+  "hotels": "East Coast, Starz Gold, Scenic City, and Lone Star hotel blocks are posted. ACFL when the block is sent.",
   "graphic": "/family/fall-2026-schedule.png",
   "extra": [],
   "kits": {
@@ -235,31 +235,6 @@
           "google": 4.4,
           "lat": 32.926006,
           "lng": -97.077356
-        }
-      ]
-    },
-    "east-coast-sunshine-showcase-2026": {
-      "ballparkNote": "East Coast has not posted the Clermont complexes yet. College coaches at every complex. We will add the field when 16U is assigned.",
-      "mapCaption": "Team hotel and downtown Clermont food. Field assignment not posted yet.",
-      "hotel": { "lat": 28.3483895, "lng": -81.6590521 },
-      "foodNearPark": [
-        {
-          "name": "Cheeser's Palace Cafe",
-          "address": "707 West Montrose Street, Clermont, FL 34711",
-          "when": "Breakfast / lunch",
-          "why": "Historic downtown. Breakfast, sandwiches, kids menu.",
-          "google": 4.7,
-          "lat": 28.555136,
-          "lng": -81.767110
-        },
-        {
-          "name": "Clermont Cafe",
-          "address": "824 West Montrose Street, Clermont, FL 34711",
-          "when": "Breakfast / lunch",
-          "why": "Diner on the same block. Soups and plates.",
-          "google": 4.7,
-          "lat": 28.555392,
-          "lng": -81.769165
         }
       ]
     }

@@ -17,9 +17,9 @@
 - Cloudflare Pages project `starsnatwalker` — owns topgunwalker.com and every secret; Pages projects can't be renamed.
 - Supabase `site = 'starsnatwalker'` key — changing it splits the view/inquiry history.
 - `mike@starsnatwalker.com` and `*@recruiting.starsnatwalker.com` — `recruiting.topgunwalker.com` has no MX record; inbound parse lives on the old domain.
-- Instagram `@starsnatwalker` — unconfirmed whether it was renamed; leave it until Mike confirms.
 
 X is **`@TopGunNatWalker`** (`https://x.com/TopGunNatWalker`) — `team.json`, `links.json`, and `twitter:site`/`twitter:creator` in `Layout.astro`.
+Instagram is **`@topgunnationalwalker`** (`https://www.instagram.com/topgunnationalwalker/`) — `team.json` and `links.json` (confirmed by Mike 2026-11-24).
 
 ## Deploy
 
