@@ -72,3 +72,10 @@
 /players/austyn-kinch        /catchers/  301
 /players/austyn-kinch/       /catchers/  301
 /players/og/austyn-kinch.png /  301
+
+# /roster and /about were never routes; the homepage sections they meant are
+# #board (recruiting board) and #coaches. Old #roster/#about anchors were dead.
+/roster    /#board    301
+/roster/   /#board    301
+/about     /#coaches  301
+/about/    /#coaches  301
