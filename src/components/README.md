@@ -7,11 +7,7 @@ Astro components for the Top Gun National Walker team website.
 | Component | Purpose | Location |
 |-----------|---------|----------|
 | [Header.astro](#headerastro) | Navigation bar | All pages |
-| [Hero.astro](#heroastro) | Homepage hero section | Homepage |
-| [Roster.astro](#rosterastro) | Player grid display | Homepage |
-| [PlayerCard.astro](#playercardastro) | Individual player card | Roster section |
 | [Schedule.astro](#scheduleastro) | Tournament schedule | Homepage |
-| [About.astro](#aboutastro) | Team & coaches info | Homepage |
 | [Contact.astro](#contactastro) | Contact form section | Homepage, Contact page |
 | [Footer.astro](#footerastro) | Site footer | All pages |
 
@@ -59,135 +55,6 @@ Uses Top Gun National Walker branding colors:
 
 ---
 
-## Hero.astro
-
-Homepage hero section with team branding and CTA.
-
-### Props
-
-No props - uses team data from `../data/team.json`
-
-### Usage
-
-```astro
----
-import Hero from '../components/Hero.astro';
----
-
-<Hero />
-```
-
-### Features
-
-- Full-width hero with a flat navy overlay on the team photo
-- Team name and tagline
-- Season and location info
-- CTA button linking to roster
-- Social media links
-
-### Customization
-
-To change hero text, edit `src/data/team.json`:
-```json
-{
-  "name": "Top Gun National Walker",
-  "division": "18U",
-  "season": "2025-2026",
-  "location": "Charlotte, NC"
-}
-```
-
----
-
-## Roster.astro
-
-Player grid displaying all roster members.
-
-### Props
-
-No props - fetches players from `../data/players.json`
-
-### Usage
-
-```astro
----
-import Roster from '../components/Roster.astro';
----
-
-<section id="roster">
-  <Roster />
-</section>
-```
-
-### Features
-
-- Responsive grid layout (1-4 columns based on screen size)
-- Auto-generates player cards
-- Links to individual player pages
-- Filters active players only
-- Sorts by grad year, then last name
-
-### Customization
-
-The roster automatically updates when players are added to `players.json`.
-
----
-
-## PlayerCard.astro
-
-Individual player card component used in roster grid.
-
-### Props
-
-```typescript
-interface Props {
-  player: Player;  // Player object from players.json
-}
-
-interface Player {
-  id: string;
-  first_name: string;
-  last_name: string;
-  slug: string;
-  grad_year: number;
-  primary_position: string;
-  headshot_url?: string;
-  social_links?: {
-    twitter?: string;
-  };
-}
-```
-
-### Usage
-
-```astro
----
-import PlayerCard from '../components/PlayerCard.astro';
-import players from '../data/players.json';
----
-
-{players.map(player => (
-  <PlayerCard player={player} />
-))}
-```
-
-### Features
-
-- Displays player headshot (or placeholder)
-- Shows name, grad year, position
-- Links to X/Twitter if available
-- Hover effects
-- Links entire card to player profile page (`/players/[slug]`)
-
-### Styling
-
-- Card aspect ratio: 4:5 (portrait)
-- Rounded corners with shadow
-- Red accent on hover
-- Fallback image for missing headshots
-
----
-
 ## Schedule.astro
 
 Tournament schedule and achievements display.
@@ -228,58 +95,6 @@ Expects schedule.json with:
 ```
 
 See [Data README](../data/README.md#schedulejson) for full schema.
-
----
-
-## About.astro
-
-Team information and coaching staff section.
-
-### Props
-
-No props - uses team data from `../data/team.json`
-
-### Usage
-
-```astro
----
-import About from '../components/About.astro';
----
-
-<section id="about">
-  <About />
-</section>
-```
-
-### Features
-
-- Team description
-- Coach cards with photos, bios, contact
-- Recruiting coordinator info
-- Grid layout for multiple coaches
-- Email links for each coach
-
-### Customization
-
-To update coaches, edit `team.json`:
-```json
-{
-  "coaches": [
-    {
-      "name": "Adrian Diaz",
-      "title": "Head Coach",
-      "email": "adrian.diaz@starsnational.com",
-      "bio": "Coach bio here..."
-    }
-  ],
-  "recruitingCoordinator": {
-    "name": "Mike Usry",
-    "title": "Recruiting Coordinator",
-    "email": "mike@point.dog",
-    "bio": "Coordinator bio..."
-  }
-}
-```
 
 ---
 
@@ -370,10 +185,7 @@ import Footer from '../components/Footer.astro';
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Roster from '../components/Roster.astro';
 import Schedule from '../components/Schedule.astro';
-import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -381,10 +193,7 @@ import Footer from '../components/Footer.astro';
 <Layout title="Stars National Walker">
   <Header transparent />
   <main>
-    <Hero />
-    <Roster />
     <Schedule />
-    <About />
     <Contact />
   </main>
   <Footer />

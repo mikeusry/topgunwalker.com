@@ -72,3 +72,17 @@
 /players/austyn-kinch        /catchers/  301
 /players/austyn-kinch/       /catchers/  301
 /players/og/austyn-kinch.png /  301
+
+# /roster and /about were never routes; the homepage sections they meant are
+# #board (recruiting board) and #coaches. Old #roster/#about anchors were dead.
+/roster    /#board    301
+/roster/   /#board    301
+/about     /#coaches  301
+/about/    /#coaches  301
+
+# East Coast Sunshine Showcase (Clermont, FL, Nov 20-22, 2026) came off the
+# schedule — the team played PGF Georgia Show Me The Money that weekend instead.
+/events/east-coast-sunshine-showcase                   /#schedule          301
+/events/east-coast-sunshine-showcase/                  /#schedule          301
+/family/travel/east-coast-sunshine-showcase-2026       /family/schedule/   301
+/family/travel/east-coast-sunshine-showcase-2026/      /family/schedule/   301

@@ -81,17 +81,14 @@ const organizationStructuredData = {
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@StarsNatWalker" />
-    <meta name="twitter:creator" content="@StarsNatWalker" />
+    <meta name="twitter:site" content="@TopGunNatWalker" />
+    <meta name="twitter:creator" content="@TopGunNatWalker" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationStructuredData)} />
-
-    <!-- Preload LCP image -->
-    <link rel="preload" as="image" href={Astro.url.pathname === "/" ? "/images/pgf-ga-smtm-2026-16u-champs.webp" : "/team.webp"} type="image/webp" fetchpriority="high" />
 
     <!-- Fonts - Non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

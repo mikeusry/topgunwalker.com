@@ -112,80 +112,33 @@
       "notes": "Arrive the night before game days (Thu Nov 12)."
     },
     {
-      "id": "east-coast-sunshine-showcase-2026",
-      "name": "East Coast Sunshine Showcase",
-      "org": "East Coast Softball",
-      "dates": "Nov 20-22, 2026",
-      "start": "2026-11-20",
+      "id": "pgf-georgia-show-me-the-money-2026",
+      "name": "PGF Georgia Show Me The Money",
+      "org": "PGF",
+      "dates": "Nov 21-22, 2026",
+      "start": "2026-11-21",
       "end": "2026-11-22",
       "timezone": "America/New_York",
-      "location": "Clermont, FL",
+      "location": "Cumming, GA",
       "venue": null,
       "address": null,
       "type": "tournament",
       "visibility": "public",
-      "isShowcase": true,
-      "hotel": "Holiday Inn Express & Suites Clermont SE – West Orlando",
-      "hotelAddress": "105 Summer Bay Boulevard, Clermont, FL 34714",
-      "hotelUrl": "https://travel.fastbreak.ai/book/PBxjo87D",
-      "hotelNote": "Stars National Walker block. Book by Fri Sep 4.",
-      "hotelBlocks": [
-        {
-          "label": "Holiday Inn Express & Suites Clermont SE – West Orlando",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "address": "105 Summer Bay Boulevard, Clermont, FL 34714",
-          "note": "Stars National Walker block. Book by Fri Sep 4."
-        },
-        {
-          "label": "Holiday Inn Resort Kissimmee by the Parks",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Kissimmee · event hotel"
-        },
-        {
-          "label": "Embassy Suites by Hilton Orlando Sunset Walk",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Kissimmee · event hotel"
-        },
-        {
-          "label": "Fairfield Inn & Suites Orlando at Flamingo Crossings Town Center",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Winter Garden · event hotel"
-        },
-        {
-          "label": "Homewood Suites by Hilton Orlando at Flamingo Crossings",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Winter Garden · event hotel"
-        },
-        {
-          "label": "Hampton Inn & Suites Clermont",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Clermont · sold out"
-        },
-        {
-          "label": "Hampton Inn by Hilton Ocoee Orlando",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Ocoee · sold out"
-        },
-        {
-          "label": "Home2 Suites by Hilton Clermont",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Clermont · sold out"
-        },
-        {
-          "label": "Home2 Suites by Hilton Orlando at Flamingo Crossings",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Winter Garden · sold out"
-        },
-        {
-          "label": "Staybridge Suites Clermont Southeast",
-          "url": "https://travel.fastbreak.ai/book/PBxjo87D",
-          "note": "Clermont · sold out"
-        }
-      ],
-      "notes": "Arrive Thu Nov 19 unless Friday games start late enough to drive in that morning. Friday start time still TBD."
+      "isShowcase": false,
+      "result": "16U Co-Champions",
+      "resultDetail": "Went 8-0 on the weekend (3-0 in pool play, 5-0 in bracket). Both teams reached the 16U final and chose not to play it, so Top Gun National Walker and Beverly Bandits Premier-Conroy share the title."
     }
   ],
   "pastEvents": [
+    {
+      "name": "PGF Georgia Show Me The Money",
+      "org": "PGF",
+      "dates": "Nov 21-22, 2026",
+      "location": "Cumming, GA",
+      "result": "16U Co-Champions",
+      "resultDetail": "Went 8-0 on the weekend (3-0 in pool play, 5-0 in bracket). Both teams reached the 16U final and chose not to play it, so Top Gun National Walker and Beverly Bandits Premier-Conroy share the title.",
+      "trophyPhoto": "/images/pgf-ga-smtm-2026-16u-champs.webp"
+    },
     {
       "name": "Alliance Fastpitch Championship Series",
       "org": "Alliance Fastpitch",

@@ -79,7 +79,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const sendgridKey = env.SENDGRID_API_KEY;
 
     const emailHtml = `
-      <h2>New Coach Inquiry - Stars National Walker</h2>
+      <h2>New Coach Inquiry - Top Gun National Walker</h2>
 
       <h3>Coach Information</h3>
       <p><strong>Name:</strong> ${data.coachName}</p>
@@ -101,7 +101,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     `;
 
     const emailText = `
-New Coach Inquiry - Stars National Walker
+New Coach Inquiry - Top Gun National Walker
 
 Coach: ${data.coachName}
 ${data.coachTitle ? `Title: ${data.coachTitle}` : ''}
@@ -133,7 +133,7 @@ ${data.message ? `Message: ${data.message}` : ''}
         ],
         from: {
           email: 'mike@southlandorganics.com',
-          name: 'Stars National Walker',
+          name: 'Top Gun National Walker',
         },
         reply_to: {
           email: data.coachEmail,

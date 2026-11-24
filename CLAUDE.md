@@ -6,7 +6,7 @@
 |------|-------|
 | Domain | `topgunwalker.com` (repo `mikeusry/topgunwalker.com`). `starsnatwalker.com` 301s to it. |
 | Stack | Astro static, Cloudflare Pages, Supabase, SendGrid, Mux |
-| Deploy | `npx wrangler pages deploy dist --project-name starsnatwalker --commit-dirty=true` |
+| Deploy | Push/merge to `main` → GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys. Never hand-deploy. |
 | Build | `npm run build` |
 | Dev | `npm run dev` (port 4321) |
 | Cloudinary | Cloud: `southland-organics`, Folder: `StarsNationalWalker` |
@@ -17,15 +17,17 @@
 - Cloudflare Pages project `starsnatwalker` — owns topgunwalker.com and every secret; Pages projects can't be renamed.
 - Supabase `site = 'starsnatwalker'` key — changing it splits the view/inquiry history.
 - `mike@starsnatwalker.com` and `*@recruiting.starsnatwalker.com` — `recruiting.topgunwalker.com` has no MX record; inbound parse lives on the old domain.
-- `@starsnatwalker` Instagram/X handle — an external account, not ours to rename here.
+
+X is **`@TopGunNatWalker`** (`https://x.com/TopGunNatWalker`) — `team.json`, `links.json`, and `twitter:site`/`twitter:creator` in `Layout.astro`.
+Instagram is **`@topgunnationalwalker`** (`https://www.instagram.com/topgunnationalwalker/`) — `team.json` and `links.json` (confirmed by Mike 2026-11-24).
 
 ## Deploy
 
-NOT connected to GitHub auto-deploy. Must deploy manually:
-
-```bash
-npm run build && npx wrangler pages deploy dist --project-name starsnatwalker --commit-dirty=true
-```
+**`main` is production.** `.github/workflows/deploy.yml` runs on every push to `main`
+(and on manual `workflow_dispatch`): `npm ci` → `npm run build` → `wrangler pages deploy dist
+--project-name starsnatwalker --branch main`, using the `CLOUDFLARE_API_TOKEN` /
+`CLOUDFLARE_ACCOUNT_ID` repo secrets. **Do not hand-deploy with `wrangler` from a Mac** —
+ship by merging a PR to `main`. Runtime secrets live on the Pages project, not in GitHub.
 
 ### Cloudflare Pages Env Vars (Production)
 
@@ -48,7 +50,8 @@ npm run build && npx wrangler pages deploy dist --project-name starsnatwalker --
 ### Player Data Structure
 
 Key fields in `players.json`:
-- `photoUrl` — Twitter profile photo (DO NOT replace with Cloudinary)
+- `photoUrl` — Cloudinary URL (`res.cloudinary.com/southland-organics/...`, folder `StarsNationalWalker/`). All 14 are Cloudinary as of 2026-11-23; never commit a raw `pbs.twimg.com` URL
+- **No contact data.** `contactEmail` and `recruitingNotes` were removed 2026-11-23 — this file is public. Player/parent emails and phones live only in the `FAMILY_CONTACTS` Pages secret and the gitignored `functions/api/_family-contacts.json`
 - `photos` — array of `{url, caption}` supplementary photos (shown in About section)
 - `videos.muxVideos` — array of `{playbackId, title, description}` for Mux-hosted video
 - `achievements` — array of strings
@@ -59,7 +62,7 @@ Key fields in `players.json`:
 All contacts route to `/recruiting#inquiry` web form. **No email addresses shown anywhere.**
 - Form submits to `/api/coach-inquiry` (Cloudflare Function)
 - Logs to Supabase `coach_inquiries` table
-- Sends email via SendGrid to: `mikeusry@gmail.com` AND `mike@southlandorganics.com`
+- Sends email via SendGrid to `mike@starsnatwalker.com` AND `mikeusry@gmail.com` (from `mike@southlandorganics.com`, reply-to the coach) — source of truth is `functions/api/coach-inquiry.ts`
 
 ### OG Images
 
@@ -67,7 +70,7 @@ Per-player OG images (1200x630) generated at build time via satori:
 - Source: `src/pages/players/og/[slug].png.ts`
 - Output: `/players/og/[slug].png`
 - Shows: player photo (circular, gold border), name, position, height, class year, team logo
-- Fetches Twitter profile photos at build time, converts via sharp
+- Fetches each player's `photoUrl` (Cloudinary) at build time, converts via sharp; falls back to text if the fetch fails
 
 ### Admin Dashboard
 
@@ -111,6 +114,11 @@ events/staff are duplicated from their templates (the originals live inside
 thin-content risk.
 
 ### GSC
+
+**`topgunwalker.com` has no GSC property the service account can see.** Checked
+2026-11-23: `sites.list` returns only `sc-domain:starsnatwalker.com`. Until
+`sc-domain:topgunwalker.com` is added and the service account below is granted on it,
+post-move search data is not reachable from here.
 
 `sc-domain:starsnatwalker.com` — service account
 `southland-warehouse@appspot.gserviceaccount.com` has full access (key in

@@ -97,7 +97,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       val ? `<p><strong>${label}:</strong> ${esc(val)}</p>` : '';
 
     const emailHtml = `
-      <h2>New Tryout Application — Stars National Walker</h2>
+      <h2>New Tryout Application — Top Gun National Walker</h2>
       <h3>Player</h3>
       <p><strong>Name:</strong> ${esc(fullName)}</p>
       ${row('Grad Year', data.gradYear)}
@@ -114,13 +114,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       ${data.email ? `<p><strong>Email:</strong> <a href="mailto:${esc(data.email)}">${esc(data.email)}</a></p>` : ''}
       ${row('Phone', data.phone)}
       ${data.achievements ? `<h3>Achievements</h3><p>${esc(data.achievements)}</p>` : ''}
-      ${data.whyStars ? `<h3>Why Stars</h3><p>${esc(data.whyStars)}</p>` : ''}
+      ${data.whyStars ? `<h3>Why Top Gun</h3><p>${esc(data.whyStars)}</p>` : ''}
       <hr>
       <p style="color:#666;font-size:12px;">Submitted via topgunwalker.com/tryout at ${new Date().toLocaleString()}</p>
     `;
 
     const emailText =
-      `New Tryout Application — Stars National Walker\n\n` +
+      `New Tryout Application — Top Gun National Walker\n\n` +
       `Player: ${fullName}\n` +
       `Grad Year: ${data.gradYear || ''}\n` +
       `Position: ${data.position || ''}${data.secondaryPosition ? ' / ' + data.secondaryPosition : ''}\n` +
@@ -133,7 +133,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       `Email: ${data.email || ''}\n` +
       `Phone: ${data.phone || ''}\n\n` +
       `Achievements: ${data.achievements || ''}\n` +
-      `Why Stars: ${data.whyStars || ''}\n`;
+      `Why Top Gun: ${data.whyStars || ''}\n`;
 
     const sendgridResponse = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
@@ -151,7 +151,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             subject: `Tryout Application: ${fullName}${data.gradYear ? ' (' + data.gradYear + ')' : ''}`,
           },
         ],
-        from: { email: 'mike@southlandorganics.com', name: 'Stars National Walker' },
+        from: { email: 'mike@southlandorganics.com', name: 'Top Gun National Walker' },
         ...(data.email ? { reply_to: { email: data.email, name: data.parentName || fullName } } : {}),
         content: [
           { type: 'text/plain', value: emailText },

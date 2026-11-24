@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import players from '../../data/players.json';
 import schedule from '../../data/schedule.json';
+import team from '../../data/team.json';
 import { generatePlayerSlug } from '../../lib/slug';
 import { buildCloudinaryUrl } from '../../lib/cloudinary';
 import { playerInitials, showPlayerPhoto } from '../../lib/player-photo';
@@ -96,7 +97,7 @@ const resultPhotos = rawResultPhotos.map((photo: any, index: number) => {
     ? `${event.result} — ${event.name} | Top Gun National Walker`
     : `${event.name} | Top Gun National Walker Roster`}
   description={hasResult
-    ? `Stars National Walker finished ${event.result} at the ${event.name} (${event.dates}, ${event.location}). See the roster of ${players.length} elite 16U softball players.`
+    ? `${team.name} finished ${event.result} at the ${event.name} (${event.dates}, ${event.location}). See the roster of ${players.length} elite 16U softball players.`
     : `See the Top Gun National Walker roster for ${event.name} (${event.dates}). ${players.length} elite 16U softball players competing in ${event.location}.`}
 >
   <Header />
