@@ -51,7 +51,6 @@ export function buildFamilyRoster(
     hometown?: string;
     highSchool?: string;
     highSchoolState?: string;
-    contactEmail?: string | null;
   }>,
   contacts: RosterContact[],
 ): EnrichedRosterPlayer[] {
@@ -61,7 +60,9 @@ export function buildFamilyRoster(
     .map((player) => {
       const name = `${player.firstName} ${player.lastName}`;
       const contact = byName.get(normName(name));
-      const playerEmail = contact?.playerEmail || player.contactEmail || undefined;
+      // Player emails live only in the private contacts source (FAMILY_CONTACTS
+      // secret / gitignored _family-contacts.json) — never in public players.json.
+      const playerEmail = contact?.playerEmail || undefined;
       const hasContact = Boolean(
         playerEmail ||
           contact?.playerPhone ||
