@@ -44,11 +44,18 @@ const publicGoogleSub = `https://calendar.google.com/calendar/render?cid=${encod
       <p class="text-lg text-gray-600">
         {schedule.season} Season
       </p>
+      {/* Subscribe only when the feed has something in it — buildIcs drops
+          finished events, so with nothing upcoming the .ics is an empty calendar. */}
+      {upcomingEvents.length > 0 && (
       <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
         <a href={publicWebcal} class="inline-flex items-center px-3 py-1.5 bg-stars-navy text-white rounded-lg font-medium hover:bg-stars-blue transition-colors">Subscribe — Apple</a>
         <a href={publicGoogleSub} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-white text-stars-navy border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-colors">Google</a>
         <a href="/calendar.ics" class="inline-flex items-center px-3 py-1.5 bg-white text-stars-navy border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-colors">Outlook / Download</a>
       </div>
+      )}
+      {upcomingEvents.length === 0 && (
+        <p class="mt-4 text-sm text-gray-600">Next season's dates post here as soon as they're set.</p>
+      )}
     </div>
 
     <!-- Upcoming Events -->

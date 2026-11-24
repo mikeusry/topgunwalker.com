@@ -18,8 +18,10 @@ const feature: Trophy = {
   record: r.record,
 };
 
+// The feature result also lives in pastEvents (so the schedule's Past Results
+// list it) — skip it here so the lead tile isn't repeated.
 const past: Trophy[] = (schedule.pastEvents ?? [])
-  .filter((e: any) => e.result)
+  .filter((e: any) => e.result && e.name !== r.event)
   .map((e: any) => ({
     result: e.result,
     event: e.name,
