@@ -1,8 +1,11 @@
 ---
-// Credentials band — team.achievements, newest/best first.
+// Credentials band — team.achievements, newest/best first, minus any line the
+// trophy case directly above already shows. Renders nothing if all are covered.
 import team from '../../data/team.json';
-const items = team.achievements ?? [];
+import { inTrophyCase } from '../../lib/trophies';
+const items = (team.achievements ?? []).filter((a: string) => !inTrophyCase(a));
 ---
+{items.length > 0 && (
 
 <section class="pb bg-tg-orange text-white py-10 md:py-12 overflow-hidden">
   <div class="container-narrow">
@@ -16,6 +19,7 @@ const items = team.achievements ?? [];
     </ul>
   </div>
 </section>
+)}
 
 <style>
   .pb { background-image: repeating-linear-gradient(-55deg, transparent 0 22px, rgb(255 255 255 / .05) 22px 44px); }

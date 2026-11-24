@@ -2,10 +2,20 @@
 // Coach-first homepage hero: the latest title, not the rename.
 // All copy comes from src/data/feature-result.json.
 import r from '../../data/feature-result.json';
+import team from '../../data/team.json';
 
 const wins = r.bracket.length;
 const runsFor = r.bracket.reduce((s, g) => s + g.us, 0);
 const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
+
+// Split the weekend record into pool + bracket. The bracket games are listed
+// in feature-result.json; pool is whatever of `record` they don't account for.
+const [weekendW, weekendL] = r.record.split('-').map(Number);
+const bracketW = r.bracket.filter((g) => g.us > g.them).length;
+const bracketL = r.bracket.filter((g) => g.us < g.them).length;
+const poolW = weekendW - bracketW;
+const poolL = weekendL - bracketL;
+const hasSplit = Number.isFinite(poolW) && Number.isFinite(poolL) && poolW >= 0 && poolL >= 0;
 ---
 
 <section class="hh relative isolate overflow-hidden bg-tg-navy-deep text-white mt-[72px]">
@@ -27,27 +37,40 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
     </p>
 
     <h1>
+      <span class="hh-team">{team.name}</span>{' '}
       <span class="hh-event">
-        <span class="hh-pgf">{r.org}</span>
-        <span class="hh-event-name">{r.eventShort}<small>{r.region}</small></span>
-      </span>
+        <span class="hh-pgf">{r.org}</span>{' '}
+        <span class="hh-event-name">{r.eventShort}{' '}<small>{r.region}</small></span>
+      </span>{' '}
       <span class="hh-title">
         <span class="block text-white/90">{r.headline.split(' ')[0]}</span>
         <span class="block text-tg-orange">{r.headline.split(' ').slice(1).join(' ')}</span>
       </span>
     </h1>
 
-    <div class="hh-record" aria-label={`${r.record} on the weekend`}>
+    <div class="hh-record">
       <span class="hh-record-num">{r.record}</span>
-      <span class="hh-record-label">on the<br />weekend</span>
+      <span class="hh-record-label">
+        on the weekend
+        {hasSplit && <span class="hh-record-split">Pool {poolW}-{poolL} · Bracket {bracketW}-{bracketL}</span>}
+      </span>
     </div>
+
+    {r.coChampion && (
+      <p class="hh-final-note">
+        {r.finalNote} Co-champions with {r.coChampion}.
+      </p>
+    )}
 
     <div class="mt-8 flex flex-col sm:flex-row gap-3">
       <a href="#board" class="hh-btn hh-btn--primary">Scout the roster</a>
-      <a href={r.source.url} target="_blank" rel="noopener" class="hh-btn hh-btn--ghost">
-        Read the recap · {r.source.name}
-      </a>
+      <a href="/recruiting/#inquiry" class="hh-btn hh-btn--ghost">College coaches: request info</a>
     </div>
+    <p class="mt-4 text-sm">
+      <a href={r.source.url} target="_blank" rel="noopener" class="text-white/75 underline underline-offset-4 decoration-white/40 hover:text-white">
+        Read the recap on {r.source.name} →
+      </a>
+    </p>
 
     <p class="mt-6 text-[11px] sm:text-xs uppercase tracking-[0.08em] sm:tracking-[0.2em] text-white/50">
       Formerly Stars National Walker · Charlotte, NC
@@ -72,7 +95,7 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
         <li class="hh-game hh-game--final" style={`--d:${wins * 90}ms`}>
           <span class="hh-w hh-w--crown">★</span>
           <span class="hh-score">FINAL</span>
-          <span class="hh-opp">Co-champions</span>
+          <span class="hh-opp">{r.coChampion ? `Not played · shared with ${r.coChampion}` : 'Co-champions'}</span>
         </li>
       </ol>
     </div>
@@ -102,6 +125,7 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
     background: repeating-linear-gradient(180deg, var(--color-tg-orange) 0 2px, transparent 2px 4px);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
   }
+  .hh-team { display: block; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: clamp(15px, 1.8vw, 20px); line-height: 1.1; color: #fff; margin-top: 14px; }
   .hh-event { display: inline-flex; align-items: stretch; margin-top: 16px; border: 2px solid #fff; border-radius: 4px; overflow: hidden; animation: hh-rise .6s cubic-bezier(.2,.8,.2,1) both; }
   .hh-pgf { display: grid; place-items: center; padding: 0 16px; background: #fff; color: var(--color-tg-navy-deep); font-family: var(--font-heading); font-weight: 700; font-size: clamp(34px, 5vw, 54px); line-height: 1; letter-spacing: .02em; }
   .hh-event-name { display: flex; flex-direction: column; justify-content: center; padding: 8px 16px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(22px, 3.2vw, 36px); line-height: 1; color: #fff; }
@@ -120,7 +144,9 @@ const runsAgainst = r.bracket.reduce((s, g) => s + g.them, 0);
 
   .hh-record { display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; padding: 6px 16px 6px 6px; background: #fff; color: var(--color-tg-navy); border-radius: 4px; }
   .hh-record-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 800; font-size: 34px; line-height: 1; background: var(--color-tg-orange); color: #fff; padding: 6px 12px; border-radius: 3px; }
-  .hh-record-label { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: 15px; line-height: 1; letter-spacing: .08em; }
+  .hh-record-label { display: flex; flex-direction: column; gap: 4px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: 15px; line-height: 1; letter-spacing: .08em; }
+  .hh-record-split { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 600; font-size: 12px; letter-spacing: .02em; text-transform: none; color: rgb(20 32 74 / .75); }
+  .hh-final-note { margin-top: 10px; max-width: 34rem; font-size: 14px; line-height: 1.4; color: rgb(255 255 255 / .8); }
 
   .hh-btn {
     display: inline-flex; align-items: center; justify-content: center;

@@ -37,10 +37,10 @@ const groups = [['P', 'Pitchers'], ['C', 'Catchers'], ['IF', 'Infield'], ['OF', 
         <h2 class="rb-h2">Find your player</h2>
       </div>
       <div class="rb-filters" role="group" aria-label="Filter roster">
-        <button class="rb-chip is-on" data-f="all">All</button>
-        {years.map((y) => <button class="rb-chip" data-f={`y${y}`}>{y}</button>)}
+        <button type="button" class="rb-chip is-on" data-f="all" aria-pressed="true">All</button>
+        {years.map((y) => <button type="button" class="rb-chip" data-f={`y${y}`} aria-pressed="false">{y}</button>)}
         <span class="rb-sep" aria-hidden="true"></span>
-        {groups.map(([k, l]) => <button class="rb-chip" data-f={`g${k}`}>{l}</button>)}
+        {groups.map(([k, l]) => <button type="button" class="rb-chip" data-f={`g${k}`} aria-pressed="false">{l}</button>)}
       </div>
     </div>
 
@@ -90,7 +90,10 @@ const groups = [['P', 'Pitchers'], ['C', 'Catchers'], ['IF', 'Infield'], ['OF', 
   const items = document.querySelectorAll<HTMLElement>('.rb-item');
   chips.forEach((c) =>
     c.addEventListener('click', () => {
-      chips.forEach((x) => x.classList.toggle('is-on', x === c));
+      chips.forEach((x) => {
+        x.classList.toggle('is-on', x === c);
+        x.setAttribute('aria-pressed', String(x === c));
+      });
       const f = c.dataset.f!;
       items.forEach((it) => {
         const show = f === 'all' || it.dataset.y === f || it.dataset.g === f;
@@ -106,6 +109,7 @@ const groups = [['P', 'Pitchers'], ['C', 'Catchers'], ['IF', 'Infield'], ['OF', 
   .rb-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
   .rb-sep { width: 1px; height: 22px; background: rgb(255 255 255 / .2); margin: 0 4px; }
   .rb-chip {
+    display: inline-flex; align-items: center; min-height: 44px;
     padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
     border: 1px solid rgb(255 255 255 / .25); color: rgb(255 255 255 / .85); transition: all .15s;
   }
